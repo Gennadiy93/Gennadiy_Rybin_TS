@@ -18,7 +18,7 @@ pytest -v -s
 - Для запуска конкретного теста используйте:
 pytest -v -s tests/test_home_page.py
 - Для запуска с генерацией отчета используйте:
-pytest -v -s --alluredir=allure-results
+pytest -v -s --alluredir=allure_results
 Где allure_results - название директории с результатами тестов.
 - Для просмотра результатов тестов в Allure используйте команду:
-allure serve allure-results
+allure serve allure_results
