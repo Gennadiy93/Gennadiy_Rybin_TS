@@ -21,4 +21,4 @@ pytest -v -s tests/test_home_page.py
 pytest -v -s --alluredir=allure-results
 Где allure_results - название директории с результатами тестов.
 - Для просмотра результатов тестов в Allure используйте команду:
-allure serve allure_results
+allure serve allure-results
