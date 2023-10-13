@@ -2,11 +2,11 @@ from pages.sign_up_page import SignUpPage
 
 
 class TestSignUpPage:
-    def test_registration_free_user_using_valid_data_before_first_step(self, setup):
+    def test_registration_free_user_using_valid_data_before_first_step(self, browser):
         """
         Checking free account registration using valid data before the first step of onboarding
         """
-        driver, wait = setup
+        driver, wait = browser
         page = SignUpPage(driver, wait)
         page.open_sign_up_page()
 
@@ -19,11 +19,11 @@ class TestSignUpPage:
 
         assert page.get_name_from_web_element() == page.FAKE_FIRST_NAME, f"Displaying text doesn't match with generated name"
 
-    def test_registration_free_user_using_valid_data_with_skip_anketa(self, setup):
+    def test_registration_free_user_using_valid_data_with_skip_anketa(self, browser):
         """
         Checking free account registration using valid data with skip of the questionnaire
         """
-        driver, wait = setup
+        driver, wait = browser
         page = SignUpPage(driver, wait)
         page.open_sign_up_page()
 
@@ -40,11 +40,11 @@ class TestSignUpPage:
 
         assert page.wait_appear_user_profile_button, f"Missing profile menu on dashboard page"
 
-    def test_registration_free_user_using_invalid_email(self, setup):
+    def test_registration_free_user_using_invalid_email(self, browser):
         """
         Checking free account registration using invalid email
         """
-        driver, wait = setup
+        driver, wait = browser
         page = SignUpPage(driver, wait)
         page.open_sign_up_page()
 
@@ -54,11 +54,11 @@ class TestSignUpPage:
 
         assert page.wait_appear_invalid_email_error, f"Missing or incorrect error text message"
 
-    def test_registration_free_user_using_valid_data_and_sign_out(self, setup):
+    def test_registration_free_user_using_valid_data_and_sign_out(self, browser):
         """
         Checking for free account registration and then sign out
         """
-        driver, wait = setup
+        driver, wait = browser
         page = SignUpPage(driver, wait)
         page.open_sign_up_page()
 
